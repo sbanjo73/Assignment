@@ -8,5 +8,6 @@ class Assignment extends BaseController
     {
         return view('templates/index')
         .view('templates/footers');
+        .view('templates/reviews');
     }
 }
