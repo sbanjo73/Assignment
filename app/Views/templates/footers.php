@@ -7,6 +7,4 @@
 
 <hr>
 <p class="text-center"> Copyright © 2025. All rights reserved.</p>
-
-
 </section>
