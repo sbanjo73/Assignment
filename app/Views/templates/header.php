@@ -6,6 +6,38 @@
     <title>Bootstrap demo</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
   </head>
+  <style>
+   
+        .genre-header {
+            background-color: #343a40;
+            color: #fff;
+            padding: 50px 0;
+            text-align: center;
+            width:100%;
+        }
+        .movie-card {
+            margin-bottom: 30px;
+        }
+
+        
+        .movie-header {
+            background: url('https://image.tmdb.org/t/p/original/1rWWBansScOoRn3XS1tfmhfF3Q7.jpg') no-repeat center center;
+            background-size: cover;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+        }
+        .movie-header h1 {
+            font-size: 3rem;
+            font-weight: bold;
+        }
+        .movie-header p {
+            font-size: 1.2rem;
+        }
+        .movie-details {
+            margin-top: 30px;
+        }
+    </style>
   <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
@@ -23,10 +55,10 @@
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            Dropdown
+            Categories
           </a>
           <ul class="dropdown-menu">
-            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="Action.php">Action</a></li>
             <li><a class="dropdown-item" href="#">Comedy</a></li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Sci-Fi</a></li>
