@@ -9,10 +9,22 @@ use App\Controllers\Pages;
 
 
 $routes->get('/', 'Home::index');
+$routes->get('news', [News::class, 'index']);
 $routes->get('news/new', [News::class, 'new']);
-$routes->get('news', [News::class, 'index']);           // Add this line
-$routes->get('news/(:segment)', [News::class, 'show']); // Add this line
-$routes->post('news', [News::class, 'create']);
+
+
+$routes->post('news/', [News::class, 'create']);
+
+$routes->get('review/create', [ReviewController::class, 'create']); 
+ $routes->post('review/create', [ReviewController::class, 'create']); 
+ $routes->get('review', [ReviewController::class, 'submitReview']);
+ $routes->get('review/getReviews',[ReviewController:: class, 'getReviews']);
+
+
+
+$routes->get('news/(:segment)', [News::class, 'show']);
+
+
 $routes->get('pages', [Pages::class, 'index']);
 $routes->get('action', [Pages::class, 'show_action']);
 //$routes->get('ajaxnews/(:segment)', [Ajax::class, 'get']);

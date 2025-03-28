@@ -26,6 +26,7 @@ class Pages extends BaseController
             . view('pages/' . $page)
             . view('templates/footer');
     } 
+    
     public function show_action()
     {
         $data['title'] = 'Action Movie'; // Capitalize the first letter

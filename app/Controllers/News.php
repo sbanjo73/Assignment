@@ -28,7 +28,7 @@ class News extends BaseController
         $data['news'] = $model->getNews($slug);
 
         if ($data['news'] === null) {
-            //throw new PageNotFoundException('Cannot find the news item: ' . $slug);
+           // throw new PageNotFoundException('Cannot find the news item: ' . $slug);
         }
 
         $data['title'] = $data['news']['title'];
@@ -37,6 +37,8 @@ class News extends BaseController
             . view('news/view')
             . view('templates/footer');
     }
+
+
     public function new()
     {
         helper('form');
