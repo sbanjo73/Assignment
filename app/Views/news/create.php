@@ -10,22 +10,22 @@
     <?php endif; ?>
 
         
-        <form action="/~2375304/assignment/public/news/create" method="POST">
+        <form action="/~2375304/assignment/public/review/create" method="POST">
         <?= csrf_field() ?>
 
             <div class="mb-3">
                 <label for="movieName" class="form-label">Movie Name</label>
-                <input type="text" class="form-control" id="movieName" value="<?= set_value('title') ?>" required>
+                <input type="text" class="form-control" name='movieName' id="movieName"  required>
             </div>
 
             <div class="mb-3">
                 <label for="releaseYear" class="form-label">Year of Release</label>
-                <input type="date" name="body" class="form-control" id="releaseYear" value="<?= set_value('body')?>" required>
+                <input type="date" class="form-control" name='releaseYear' id="releaseYear" required>
             </div>
 
             <div class="mb-3">
                 <label for="rating" class="form-label">Rating</label>
-                <select class="form-select" id="rating">
+                <select class="form-select" name='rating' id="rating">
                     <option value="" disabled selected>Select a rating</option>
                     <option value="1">1 Star</option>
                     <option value="2">2 Stars</option>

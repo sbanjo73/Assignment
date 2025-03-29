@@ -1,6 +1,6 @@
 <?php
 namespace App\Controllers;
-use App\Models\CustomerReviewModel;
+use App\Models\ReviewModel;
 
 class ReviewController extends BaseController
 {
@@ -19,30 +19,34 @@ class ReviewController extends BaseController
     {
         
         
+        helper('form');
+
             $reviewModel = new ReviewModel();
     
             
-            $name = $this->request->getPost('movie name');
-            $yearofrelease = $this->request->getPost('year of release');
+            $data = $this->request->getPost(['movieName', 'releaseYear','rating']);
+
+            $name = $this->request->getPost('movieName');
+            $yearofrelease = $this->request->getPost('releaseYear');
             $rating = $this->request->getPost('rating');
     
             
-            if (empty($name) || empty($yearofrelease)) || empty($rating) {
-                return $this->response->setJSON(['status' => 'error', 'message' => 'All fields are required']);
+            if (empty($name) || empty($yearofrelease) || empty($rating)) {
+                return $this->response->setJSON(['status' => 'error', 'message' => $data]);
             }
     
             
             $data = [
-                'name' => $name,
-                'year of release' => $yearofrelease
+                'movieName' => $name,
+                'yearOfRelease' => $yearofrelease,
                 'rating' => $rating
             ];
     
             if ($reviewModel->insert($data)) {
-                return redirect()->to('/reviews.php')->with('success', '🎉 Review added successfully!');
+                return redirect()->to('/news/new')->with('success', '🎉 Review added successfully!');
             } else {
                 
-                return redirect()->to('/reviews.php')->with('error', '❗️ Failed to add review. Try again!');
+                return redirect()->to('/news/new')->with('error', '❗️ Failed to add review. Try again!');
             }
 
         }

@@ -3,6 +3,7 @@
 use CodeIgniter\Router\RouteCollection;
 use App\Controllers\News; // Add this line
 use App\Controllers\Pages;
+use App\Controllers\ReviewController;
 //use App\Controllers\Ajax;
 //use App\Controllers\Assignment;
 
@@ -15,7 +16,7 @@ $routes->get('news/new', [News::class, 'new']);
 
 $routes->post('news/', [News::class, 'create']);
 
-$routes->get('review/create', [ReviewController::class, 'create']); 
+//$routes->get('review/create', [ReviewController::class, 'create']); 
  $routes->post('review/create', [ReviewController::class, 'create']); 
  $routes->get('review', [ReviewController::class, 'submitReview']);
  $routes->get('review/getReviews',[ReviewController:: class, 'getReviews']);

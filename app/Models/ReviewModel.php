@@ -17,7 +17,7 @@ class ReviewModel extends Model
 {
     protected $table = 'user_review';
     protected $primaryKey = 'id';
-    protected $allowedFields = ['movie name', 'year of release', 'rating'];
+    protected $allowedFields = ['movieName', 'yearOfRelease', 'rating'];
        /**
      * @param false|string $slug
      *
@@ -29,7 +29,7 @@ class ReviewModel extends Model
             return $this->findAll();
         }
 
-        return $this->where(['home' => $slug])->first();
+        return $this->where(['movieName' => $slug])->first();
     }
 
     public function addReviews($data)
@@ -38,5 +38,3 @@ class ReviewModel extends Model
     }
 }
 
-}
-?>
