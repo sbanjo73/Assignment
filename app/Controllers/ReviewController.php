@@ -4,21 +4,15 @@ use App\Models\ReviewModel;
 
 class ReviewController extends BaseController
 {
-
-
-    public function submitReview()
+    public function index()
     {
-
-
         return view('templates/header', ['title' => 'Create a news item'])
-            . view('pages/create')
+            . view('news/create')
             . view('templates/footer');
     }
     
     public function create()
     {
-        
-        
         helper('form');
 
             $reviewModel = new ReviewModel();
@@ -35,7 +29,6 @@ class ReviewController extends BaseController
                 return $this->response->setJSON(['status' => 'error', 'message' => $data]);
             }
     
-            
             $data = [
                 'movieName' => $name,
                 'yearOfRelease' => $yearofrelease,
@@ -43,31 +36,19 @@ class ReviewController extends BaseController
             ];
     
             if ($reviewModel->insert($data)) {
-                return redirect()->to('/news/new')->with('success', '🎉 Review added successfully!');
+                return redirect()->route('review_new')->with('success', '🎉 Review added successfully!');
             } else {
-                
-                return redirect()->to('/news/new')->with('error', '❗️ Failed to add review. Try again!');
+                return redirect()->route('review_new')->with('error', '❗️ Failed to add review. Try again!');
             }
 
         }
-    
 
-        
-            // Get All Reviews - AJAX
-    public function getReviews()
+        public function getReviews()
         {
             $reviewModel = new ReviewModel();
-                
-            // Get all reviews ordered by created_at DESC
             $reviews = $reviewModel->orderBy('created_at', 'DESC')->findAll();
         
-            // Return JSON response
             return $this->response->setJSON($reviews);
         }
-        
-          
-    
-
-
 }
 

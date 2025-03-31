@@ -1,19 +1,12 @@
-<div class="container mt-5 gap-2 d-flex flex-column justify-content-end">
-
-    <button type="button" class="btn btn-secondary" style="width: 120px;" onclick="getData()">
-        Refresh
-    </button>
+<div class="container mt-5">
 
     <h1 class="text-center mb-4">Submit Your Movie Review</h1>
 
     <?php if (session()->getFlashdata('success')): ?>
-    <div class="alert alert-success">    
-        <?= session()->getFlashdata('success') ?>
-    </div>
-
-    <?php elseif (session()->getFlashdata('error')): ?>
-        <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
-    <?php endif; ?>
+    <div class="alert alert-success"><?= session()->getFlashdata('success') ?></div>
+<?php elseif (session()->getFlashdata('error')): ?>
+    <div class="alert alert-danger"><?= session()->getFlashdata('error') ?></div>
+<?php endif; ?>
 
     
     <form action="/~2375304/assignment/public/review/create" method="POST">
@@ -46,7 +39,6 @@
         </div>
     </form>
 
-    <section id="review-section" class="text-center"></section>
 </div>
 
 <script>
@@ -54,24 +46,12 @@
     document.getElementById("releaseYear").max = new Date().getFullYear();
     
     function getData() {
-            fetch('https://mi-linux.wlv.ac.uk/~2375304/assignment/public/review/get/')
+            fetch('https://mi-linux.wlv.ac.uk/~in9352/ci4/public/review/get/')
             .then(response => response.json())
             .then(response => {
-                const el = document.getElementById("review-section");
-
-                for (let i = 0; i < response.length; i++) {
-                    const appendElement = `
-                        <div class='card mt-5 ' id='review-item'>
-                        <img src='...' class="card-img-top" alt='...'>
-                            <div class='card-body'>
-                                <h1 class='card-title' id='review-movie-name'>${response[i].movieName}</h1>
-                                <p class='card-text' id='review-rating'>${response[i].rating}</p>
-                                <p class='card-text' id='review-year'>${response[i].yearOfRelease}</p>
-                            </div>
-                        </div>`
-                    el.insertAdjacentHTML("afterend", appendElement);
-                }
-             })
+    
+            console.log("hiiiii we got data", response)
+            })
             .catch(err => {
             console.log(err);
         });

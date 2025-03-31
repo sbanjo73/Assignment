@@ -54,22 +54,22 @@
 
 
 <script>
-	//function getData(slug) {
+	function getData(slug) {
 		
-		// Fetch data
-		//fetch('https://mi-linux.wlv.ac.uk/~in9352/ci4/public/ajax/get/' + slug)
+		 Fetch data
+		 fetch('https://mi-linux.wlv.ac.uk/~in9352/ci4/public/ajax/get/' + slug)
 			
-		  // Convert response string to json object
-		  //.then(response => response.json())
-		 // .then(response => {
+		     Convert response string to json object
+		    .then(response => response.json())
+		     .then(response => {
 
-			// Copy one element of response to our HTML paragraph
-			//document.getElementById("ajaxArticle").innerHTML = response.title + ": " + response.body;
-		 // })
-		//  .catch(err => {
+			 Copy one element of response to our HTML paragraph
+			document.getElementById("ajaxArticle").innerHTML = response.title + ": " + response.body;
+		  })
+		  .catch(err => {
 			
-			// Display errors in console
-			//console.log(err);
-		//});
-	//}
+			 Display errors in console
+			console.log(err);
+		});
+	}
 </script>

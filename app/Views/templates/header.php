@@ -41,17 +41,17 @@
   <body>
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Screen Critic</a>
+    <a class="navbar-brand" href="https://mi-linux.wlv.ac.uk/~2375304/assignment/public/">Screen Critic</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="https://mi-linux.wlv.ac.uk/~2375304/assignment/public/news/">Home</a>
+          <a class="nav-link active" aria-current="page" href="https://mi-linux.wlv.ac.uk/~2375304/assignment/public/">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="https://mi-linux.wlv.ac.uk/~2375304/assignment/public/news/new">Reviews</a>
+          <a class="nav-link" href="https://mi-linux.wlv.ac.uk/~2375304/assignment/public/review/new">Reviews</a>
         </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
